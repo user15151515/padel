@@ -1,4 +1,4 @@
-// Tu configuración de Firebase
+//  configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCD5M-oEEfMDzBIajdFHVSVx--2FGbGzHs",
     authDomain: "deudas-22173.firebaseapp.com",
@@ -80,13 +80,13 @@ db.collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
         const comment = match.comment;
 
         let loser = "";
-        if (winner === "Tú") {
+        if (winner === "Jana") {
             yourWinCount++;
             loser = "Èlia";
             eliaLossCount++;
         } else if (winner === "Èlia") {
             eliaWinCount++;
-            loser = "Tú";
+            loser = "Jana";
             yourLossCount++;
         } else if (winner === "Empate") {
             // No se cuentan como victoria o derrota
