@@ -31,6 +31,28 @@ body {
   width: 100%;
   max-width: 800px;
   animation: fadeIn 1s ease-in-out;
+  margin-top: 80px;
+}
+.main-menu {
+  background-color: var(--pink);
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: middle;
 }
 
 header {
