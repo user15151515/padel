@@ -1,5 +1,4 @@
 
-
 // Referencias a elementos del DOM
 const matchForm = document.getElementById('match-form');
 const matchesDiv = document.getElementById('matches');
