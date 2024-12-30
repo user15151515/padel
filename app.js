@@ -1,4 +1,4 @@
-// Referencias a elementos del DOM
+// Referències a elements del DOM
 const matchForm = document.getElementById('match-form');
 const matchesDiv = document.getElementById('matches');
 const yourWins = document.getElementById('your-wins');
@@ -8,17 +8,17 @@ const eliaLosses = document.getElementById('elia-losses');
 const toggleFormBtn = document.getElementById('toggle-form-btn');
 const addMatchSection = document.querySelector('.add-match');
 
-// Función para alternar la visibilidad del formulario
+// Funció per alternar la visibilitat del formulari
 toggleFormBtn.addEventListener('click', () => {
     addMatchSection.classList.toggle('hidden');
     if (addMatchSection.classList.contains('hidden')) {
-        toggleFormBtn.textContent = 'Añadir Partido';
+        toggleFormBtn.textContent = 'Afegir Partit';
     } else {
-        toggleFormBtn.textContent = 'Cerrar Formulario';
+        toggleFormBtn.textContent = 'Tancar Formulari';
     }
 });
 
-// Función para añadir un partido
+// Funció per afegir un partit
 matchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const winner = document.getElementById('winner').value;
@@ -36,13 +36,15 @@ matchForm.addEventListener('submit', (e) => {
         comment,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(() => {
-        matchForm.reset();
-        addMatchSection.classList.add('hidden');
-        toggleFormBtn.textContent = 'Añadir Partido';
+        matchForm.reset(); 
+        addMatchSection.classList.add('hidden'); 
+        toggleFormBtn.textContent = 'Añadir Partido'; 
     }).catch(error => {
         console.error("Error al añadir el partido: ", error);
     });
 });
+
+
 
 // Función para renderizar partidos
 db.collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
@@ -74,16 +76,29 @@ db.collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
         } else if (winner === "Empate") {
             // No se cuentan como victoria o derrota
         }
-
+        
         matchDiv.innerHTML = `
             <div class="match-details">
-                <h3>Ganador: ${winner}</h3>
-                ${winner !== "Empate" ? `<p>Perdedor: ${loser}</p>` : ''}
-                <p>Sets: ${sets}</p>
-                ${comment ? `<p>Comentario: ${comment}</p>` : ''}
+                <h3>
+                    ${winner !== "Empat" ? winner : 'Empate'}
+                    ${winner !== "Empat" ? `
+                        <svg class="winner-crown" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.15" d="M4 16V5L8 9L12 5L16 9L20 5V16H4Z" fill="currentColor"/>
+                            <path d="M4 19H20M4 5V16H20V5L16 9L12 5L8 9L4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    ` : ''}
+                </h3>
+                ${winner !== "Empat" ? `<p><span class="label">Perdedora:</span> ${loser}</p>` : ''}
+                <p><span class="label">Sets:</span> ${sets}</p>
+                ${comment ? `<p><span class="label">Comentari:</span> ${comment}</p>` : ''}
             </div>
-            <button class="delete-btn" data-id="${matchId}">Borrar</button>
+            <button class="delete-btn" data-id="${matchId}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 6h18v2H3zm3 3h12v12H6zm5-5h2v3h-2z"></path>
+                </svg>
+            </button>
         `;
+    
 
         matchesDiv.appendChild(matchDiv);
     });

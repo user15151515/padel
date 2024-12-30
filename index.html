@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,74 +13,76 @@
 <body>
     <div class="container">
         <header>
-            <h1>Pádel</h1>
+            <h1>Pàdel</h1>
         </header>
         
         <section class="scoreboard">
-            <h2>Clasificación Global</h2>
+            <h2>Classificació Global</h2>
             <div class="scores">
                 <div class="score-card">
                     <div class="score-icon">
-                        <!-- Ícono para "Jana" -->
+                        <!-- Ícono per a "Jana" -->
                         <img src="imagenes/Jana.png" alt="Jana">
                     </div>
                     <div class="score-info">
                         <h3>Jana</h3>
-                        <p>Victorias: <span id="your-wins">0</span></p>
-                        <p>Derrotas: <span id="your-losses">0</span></p>
+                    
+                          
+                        <p>Victòries: <span id="your-wins">0</span></p>
+                        <p>Derrotes: <span id="your-losses">0</span></p>
                     </div>
                 </div>
                 <div class="score-card">
                     <div class="score-icon">
-                        <!-- Ícono para "Èlia" -->
+                        <!-- Ícono per a "Èlia" -->
                         <img src="imagenes/Èlia.png" alt="Èlia">
                     </div>
                     <div class="score-info">
                         <h3>Èlia</h3>
-                        <p>Victorias: <span id="elia-wins">0</span></p>
-                        <p>Derrotas: <span id="elia-losses">0</span></p>
+                        <p>Victòries: <span id="elia-wins">0</span></p>
+                        <p>Derrotes: <span id="elia-losses">0</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="controls">
-            <button id="toggle-form-btn">Añadir Partido</button>
+            <button id="toggle-form-btn">Afegir Partit</button>
         </section>
 
         <section class="add-match hidden">
-            <h2>Nuevo Partido</h2>
+            <h2>Nou Partit</h2>
             <form id="match-form">
                 <div class="form-group">
-                    <label for="winner">Ganador:</label>
+                    <label for="winner">Guanyadora:</label>
                     <select id="winner" required>
                         <option value="">Selecciona</option>
                         <option value="Jana">Jana</option>
                         <option value="Èlia">Èlia</option>
-                        <option value="Empate">Empate</option>
+                        <option value="Empat">Empat</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="sets">Sets (ejemplo: 6-4, 3-6, 7-5):</label>
+                    <label for="sets">Sets</label>
                     <input type="text" id="sets" placeholder="6-4, 3-6, 7-5" required>
                 </div>
                 <div class="form-group">
-                    <label for="comment">Comentario:</label>
-                    <textarea id="comment" rows="3" placeholder="Añade un comentario opcional"></textarea>
+                    <label for="comment">Comentari:</label>
+                    <textarea id="comment" rows="3" placeholder="Afegeix un comentari opcional"></textarea>
                 </div>
-                <button type="submit">Añadir Partido</button>
+                <button type="submit">Afegir Partit</button>
             </form>
         </section>
 
         <section class="match-list">
-            <h2>Historial de Partidos</h2>
+            <h2>Historial de Partits</h2>
             <div id="matches"></div>
         </section>
     </div>
 
     <!-- Firebase Initialization -->
     <script>
-        // Configuración de Firebase
+        // Configuració de Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyCD5M-oEEfMDzBIajdFHVSVx--2FGbGzHs",
             authDomain: "deudas-22173.firebaseapp.com",
@@ -91,7 +93,7 @@
             measurementId: "G-3XMKX8XSM5"
         };
 
-        // Inicializar Firebase
+        // Inicialitzar Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
     </script>
