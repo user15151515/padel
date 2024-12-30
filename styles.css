@@ -409,6 +409,10 @@ button[type="submit"]:active {
       padding-bottom: 3px;
   }
 
+  .main-menu {
+    padding: 1px 10px;
+}
+
   .score-card {
       width: 100%;
   }
