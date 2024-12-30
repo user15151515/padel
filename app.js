@@ -1,4 +1,3 @@
-
 // Referencias a elementos del DOM
 const matchForm = document.getElementById('match-form');
 const matchesDiv = document.getElementById('matches');
@@ -64,13 +63,13 @@ db.collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
         const comment = match.comment;
 
         let loser = "";
-        if (winner === "Tú") {
+        if (winner === "Jana") {
             yourWinCount++;
             loser = "Èlia";
             eliaLossCount++;
         } else if (winner === "Èlia") {
             eliaWinCount++;
-            loser = "Tú";
+            loser = "Jana";
             yourLossCount++;
         } else if (winner === "Empate") {
             // No se cuentan como victoria o derrota

@@ -20,6 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   animation: fadeIn 1s ease-in-out;
 }
@@ -40,11 +41,11 @@ header {
 header h1 {
   color: var(--pink);
   /* Eliminada la animación de bounce */
-  font-size: 2em;
+  font-size: 2.5em; /* Aumentado el tamaño del título */
 }
 
 section {
-  margin-bottom: 30px;
+  margin-bottom: 25px; /* Reducido el margen inferior */
 }
 
 h2 {
@@ -53,6 +54,7 @@ h2 {
   border-bottom: 2px solid var(--pink);
   display: inline-block;
   padding-bottom: 5px;
+  font-size: 1.5em; /* Aumentado el tamaño del subtítulo */
 }
 
 .controls {
@@ -63,10 +65,11 @@ h2 {
 #toggle-form-btn {
   background-color: var(--pink);
   color: var(--white);
-  padding: 10px 20px;
+  padding: 12px 24px; /* Aumentado el padding */
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1em; /* Aumentado el tamaño de fuente */
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -98,6 +101,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
+  font-size: 1em; /* Aumentado el tamaño de fuente */
 }
 
 input[type="text"],
@@ -108,6 +112,7 @@ textarea {
   border: 2px solid var(--pink);
   border-radius: 5px;
   transition: border-color 0.3s;
+  font-size: 1em; /* Aumentado el tamaño de fuente */
 }
 
 input[type="text"]:focus,
@@ -120,10 +125,11 @@ textarea:focus {
 button[type="submit"] {
   background-color: var(--pink);
   color: var(--white);
-  padding: 10px 20px;
+  padding: 12px 24px; /* Aumentado el padding */
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1em; /* Aumentado el tamaño de fuente */
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -145,12 +151,13 @@ button[type="submit"]:active {
   background-color: var(--white);
   border: 2px solid var(--pink);
   border-radius: 10px;
-  padding: 15px;
+  padding: 25px; /* Aumentado el padding */
   width: 45%;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   transition: transform 0.3s;
+  font-size: 1.1em; /* Aumentado el tamaño de fuente */
 }
 
 .score-card:hover {
@@ -158,17 +165,28 @@ button[type="submit"]:active {
 }
 
 .score-icon {
-  margin-right: 15px;
+  margin-right: 20px; /* Aumentado el margen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-icon img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 80px; /* Aumentado el tamaño */
+  height: 80px; /* Aumentado el tamaño */
 }
 
 .score-info h3 {
   margin-bottom: 10px;
   color: var(--black);
+  font-size: 1.5em; /* Aumentado el tamaño */
 }
 
 .score-info p {
   margin-bottom: 5px;
-  font-size: 0.9em;
+  font-size: 1em; /* Aumentado el tamaño */
 }
 
 .match-list #matches {
@@ -186,6 +204,7 @@ button[type="submit"]:active {
   justify-content: space-between;
   align-items: center;
   animation: fadeInUp 0.5s ease-out;
+  gap: 10px; /* Añadido para reducir espacio */
 }
 
 .match-details {
@@ -195,24 +214,27 @@ button[type="submit"]:active {
 .match-details h3 {
   margin-bottom: 5px;
   color: var(--black);
+  font-size: 1.1em; /* Aumentado el tamaño */
 }
 
 .match-details p {
   margin-bottom: 3px;
+  font-size: 0.95em; /* Aumentado ligeramente */
 }
 
 .delete-btn {
-  background-color: var(--black);
+  background-color: var(--pink);
   color: var(--white);
   border: none;
   border-radius: 3px;
-  padding: 5px 10px;
+  padding: 8px 16px; /* Aumentado el padding */
   cursor: pointer;
+  font-size: 0.9em; /* Aumentado el tamaño de fuente */
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .delete-btn:hover {
-  background-color: var(--pink);
+  background-color: var(--black);
 }
 
 .delete-btn:active {
@@ -233,4 +255,164 @@ button[type="submit"]:active {
 @keyframes fadeInUp {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
+}
+
+/* Estilos Responsive */
+
+/* Para dispositivos con ancho máximo de 1024px (tabletas en orientación horizontal) */
+@media (max-width: 1024px) {
+  .scoreboard .scores {
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 20px;
+  }
+
+  .score-card {
+      width: 45%;
+  }
+}
+
+/* Para dispositivos con ancho máximo de 768px (tabletas en orientación vertical y smartphones en orientación horizontal) */
+@media (max-width: 768px) {
+  .scoreboard .scores {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .score-card {
+      width: 80%;
+      padding: 20px; /* Reducido el padding */
+  }
+
+  .controls {
+      margin-bottom: 15px;
+  }
+
+  #toggle-form-btn {
+      width: 80%;
+      padding: 12px 0;
+      font-size: 1em;
+  }
+
+  .add-match {
+      padding: 15px;
+  }
+
+  .match-list #matches {
+      max-height: 250px;
+  }
+
+  .match {
+      flex-direction: row;
+      align-items: center;
+  }
+
+  .delete-btn {
+      margin-left: 10px; /* Mantenido al lateral */
+  }
+}
+
+/* Para dispositivos con ancho máximo de 480px (smartphones en orientación vertical) */
+@media (max-width: 480px) {
+  .container {
+      padding: 15px;
+      border-radius: 10px;
+  }
+
+  header h1 {
+      font-size: 2em; /* Reducido ligeramente */
+  }
+
+  h2 {
+      font-size: 1.4em; /* Reducido el tamaño del subtítulo */
+      padding-bottom: 3px;
+  }
+
+  .score-card {
+      width: 100%;
+  }
+
+  .score-icon img {
+      width: 80px; /* Reducido el tamaño */
+      height: 80px; /* Reducido el tamaño */
+  }
+
+  .score-info h3 {
+      font-size: 1.3em; /* Reducido ligeramente */
+  }
+
+  .score-info p {
+      font-size: 0.95em;
+  }
+
+  .controls {
+      margin-bottom: 10px;
+  }
+
+  #toggle-form-btn {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 0.95em;
+  }
+
+  .add-match {
+      padding: 15px;
+  }
+
+  .form-group {
+      margin-bottom: 12px;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+      padding: 8px;
+      font-size: 0.9em;
+  }
+
+  button[type="submit"] {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 1em;
+  }
+
+  .match-list #matches {
+      max-height: 200px;
+  }
+
+  .match {
+      padding: 8px;
+      flex-direction: row; /* Asegura que el botón permanezca al lateral */
+  }
+
+  .match-details {
+      flex-grow: 1;
+  }
+
+  .match-details h3 {
+      font-size: 1em;
+  }
+
+  .match-details p {
+      font-size: 0.8em;
+  }
+
+  .delete-btn {
+      padding: 6px 12px;
+      font-size: 0.8em;
+  }
+}
+
+/* General Mejoras para Movilidad */
+@media (max-width: 768px) {
+  body {
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+      padding: 5px;
+  }
 }
