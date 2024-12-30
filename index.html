@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pádel</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Registro de Pádel</h1>
+        </header>
+        
+        <section class="scoreboard">
+            <h2>Clasificación Global</h2>
+            <div class="scores">
+                <div class="score-card">
+                    <div class="score-icon">
+                        <!-- Ícono para "Tú" -->
+                        <img src="imagenes/Jana.png" alt="Jana" width="74" height="74">
+
+                    </div>
+                    <div class="score-info">
+                        <h3>Tú</h3>
+                        <p>Victorias: <span id="your-wins">0</span></p>
+                        <p>Derrotas: <span id="your-losses">0</span></p>
+                    </div>
+                </div>
+                <div class="score-card">
+                    <div class="score-icon">
+                        <!-- Ícono para "Èlia" -->
+                        <img src="imagenes/Èlia.png" alt="Èlia" width="80" height="80">
+
+                    </div>
+                    <div class="score-info">
+                        <h3>Èlia</h3>
+                        <p>Victorias: <span id="elia-wins">0</span></p>
+                        <p>Derrotas: <span id="elia-losses">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="toggle-form-btn">Añadir Partido</button>
+        </section>
+
+        <section class="add-match hidden">
+            <h2>Nuevo Partido</h2>
+            <form id="match-form">
+                <div class="form-group">
+                    <label for="winner">Ganador:</label>
+                    <select id="winner" required>
+                        <option value="">Selecciona</option>
+                        <option value="Tú">Tú</option>
+                        <option value="Èlia">Èlia</option>
+                        <option value="Empate">Empate</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sets">Sets (ejemplo: 6-4, 3-6, 7-5):</label>
+                    <input type="text" id="sets" placeholder="6-4, 3-6, 7-5" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comentario:</label>
+                    <textarea id="comment" rows="3" placeholder="Añade un comentario opcional"></textarea>
+                </div>
+                <button type="submit">Añadir Partido</button>
+            </form>
+        </section>
+
+        <section class="match-list">
+            <h2>Historial de Partidos</h2>
+            <div id="matches"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
