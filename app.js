@@ -1,12 +1,15 @@
 // Tu configuración de Firebase
 const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "TU_AUTH_DOMAIN",
-    projectId: "TU_PROJECT_ID",
-    storageBucket: "TU_STORAGE_BUCKET",
-    messagingSenderId: "TU_SENDER_ID",
-    appId: "TU_APP_ID"
-};
+    apiKey: "AIzaSyCD5M-oEEfMDzBIajdFHVSVx--2FGbGzHs",
+    authDomain: "deudas-22173.firebaseapp.com",
+    projectId: "deudas-22173",
+    storageBucket: "deudas-22173.appspot.com",
+    messagingSenderId: "729150614399",
+    appId: "1:729150614399:web:ea535c6403f2b33183884a",
+    measurementId: "G-3XMKX8XSM5"
+  };
+  
+
 
 // Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
