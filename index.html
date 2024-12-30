@@ -23,7 +23,6 @@
                     <div class="score-icon">
                         <!-- Ícono para "Jana" -->
                         <img src="imagenes/Jana.png" alt="Jana" width="74" height="74">
-
                     </div>
                     <div class="score-info">
                         <h3>Jana</h3>
@@ -35,7 +34,6 @@
                     <div class="score-icon">
                         <!-- Ícono para "Èlia" -->
                         <img src="imagenes/Èlia.png" alt="Èlia" width="80" height="80">
-
                     </div>
                     <div class="score-info">
                         <h3>Èlia</h3>
@@ -79,6 +77,24 @@
             <div id="matches"></div>
         </section>
     </div>
+
+    <!-- Firebase Initialization -->
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCD5M-oEEfMDzBIajdFHVSVx--2FGbGzHs",
+            authDomain: "deudas-22173.firebaseapp.com",
+            projectId: "deudas-22173",
+            storageBucket: "deudas-22173.appspot.com",
+            messagingSenderId: "729150614399",
+            appId: "1:729150614399:web:ea535c6403f2b33183884a",
+            measurementId: "G-3XMKX8XSM5"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
 
     <script src="app.js"></script>
 </body>

@@ -1,19 +1,4 @@
-//  configuración de Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyCD5M-oEEfMDzBIajdFHVSVx--2FGbGzHs",
-    authDomain: "deudas-22173.firebaseapp.com",
-    projectId: "deudas-22173",
-    storageBucket: "deudas-22173.appspot.com",
-    messagingSenderId: "729150614399",
-    appId: "1:729150614399:web:ea535c6403f2b33183884a",
-    measurementId: "G-3XMKX8XSM5"
-  };
-  
 
-
-// Inicializar Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 // Referencias a elementos del DOM
 const matchForm = document.getElementById('match-form');
@@ -80,13 +65,13 @@ db.collection('matches').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
         const comment = match.comment;
 
         let loser = "";
-        if (winner === "Jana") {
+        if (winner === "Tú") {
             yourWinCount++;
             loser = "Èlia";
             eliaLossCount++;
         } else if (winner === "Èlia") {
             eliaWinCount++;
-            loser = "Jana";
+            loser = "Tú";
             yourLossCount++;
         } else if (winner === "Empate") {
             // No se cuentan como victoria o derrota
