@@ -653,3 +653,28 @@
     }
   }
   
+  @media (hover: none), (pointer: coarse) {
+    /* Aquí sobreescribes todos los :hover que quieras anular en móvil */
+    .home-icon-container:hover {
+      transform: none !important;
+    }
+    .home-icon:hover {
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    #toggle-form-btn:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    .score-card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    .match:hover {
+      transform: none !important;
+    }
+    .delete-btn:hover svg {
+      fill: var(--pink) !important;
+    }
+  }
+  
